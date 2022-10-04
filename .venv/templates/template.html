@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <title>Template</title>
+</head>
+<body>
+    <div style='display: flex; justify-content: center; align-items:center; height: 100vh;' class=" w-screen h-screen  ">
+        <div style='display: flex; justify-content: center; align-items:center;  width:100%; height:100%;' class=" w-full h-full ">
+            <img style='height: 300px; margin: 40px;'  class=" w-1/4 " src="file:///Users/santiagosonzini/Desktop/presupuestos/presupuestos/assets/controllogo-mini.png" alt=""/>
+            <h1 class="  mt-20 text-4xl m-2"> <b>MyControl.dev</b></h1>
+            
+        </div>
+        <div class="h-1/5 w-fullflex flex-col justify-center">
+            <p class="m-2">Cotizacion para: {{user_email}}</p>
+            <p class="m-2">Proyecto: {{name}}</p>
+        </div>
+        <div class=" w-full h-3/4    flex align-start flex-column">
+            <table style='border-collapse: separate; border-spacing: 1.5rem 0; margin: 30px;' class=" w-full h-full table-auto border-separate  border-spacing-x-6 border-spacing-y-3">
+                <thead class=" h-18 text-center ">
+                    <td style='background-color: #ffc200; height: 4rem;' class=" rounded-md border-black font-bold">Servicio</td>
+                    <td style='background-color: #ffc200; height: 4rem;'class="  rounded-md border-black font-bold">Descripcion</td>
+                    <td style='background-color: #ffc200; height: 4rem;'class="  rounded-md border-black font-bold">Precio</td>
+                </thead>
+                
+                {% for item in servicios %}
+                    <tr class=" h-14 m-8 text-center">
+                        <td class=" text-center text-md ">{{item.name}}</td>
+                        <td class="">{{item.description}}</td>
+                        <td class="w-1/5">${{item.price}}</td>
+                    </tr>
+                {% endfor %}
+                <tr class=" h-14 m-8 text-center">
+                    <td class=" text-center text-md "></td>
+                    <td class=""></td>
+                    <td class="w-1/5"> <b>Total:</b> <br>${{54233534}}</td>
+                </tr>
+            </table>
+            
+        </div>
+        
+        <div style='background-color: #000; color: white; margin-top: 20px' class=" w-full h=1/5  flex m-t8  p-4 flex-col align-center text-center justify-center bg-black font-bold text-white">
+            <p>Telefono: +343 342432498 </p>
+            <p>Email: administracion@mycontrol.dev </p>
+            <p>Web: https://mycontrol.dev/ </p>
+        </div>
+    </div>
+</body>
+</html> 

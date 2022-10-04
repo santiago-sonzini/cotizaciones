@@ -1,0 +1,1 @@
+ring(html, pdf_path, options=options)
